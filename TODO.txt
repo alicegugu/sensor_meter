@@ -1,0 +1,7 @@
+1. Move all css to CSS file
+2. erase color to transparent
+3. check http://www.maxdesign.com.au/articles/css-layouts/ to learn CSS layout
+4. check http://geeksretreat.wordpress.com/2012/06/23/html-5-canvas-an-animated-digital-clock/
+5. http://stackoverflow.com/questions/1711/what-is-the-single-most-influential-book-every-programmer-should-read
+6. http://creativejs.com/2012/01/day-10-drawing-rotated-images-into-canvas/
+   http://phrogz.net/tmp/canvas_gauge.html

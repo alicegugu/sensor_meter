@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+
+{% load staticfiles %}
+<html lang="en">
+	<head>
+		<title>Hello Sensor meters</title>
+
+		<link rel="stylesheet" href="/static/css/meter.css">
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+		<script src="http://d23cj0cdvyoxg0.cloudfront.net/xivelyjs-1.0.4.min.js"></script>
+		<script type="text/javascript" src="/static/js/meter.js"></script>
+	</head>
+	<body>
+
+
+<div id="head-container">
+	<div id="header" align="center">
+		<h1>
+			Sensor meters 
+		</h1>
+	</div>
+
+</div>
+
+<div id="content-container">
+	<div id="content-container2">
+		<div id="content-container3">
+			<div id="colume1">
+				<div align="center">
+					<h3 id="mh_title">MH Blue 1019</h3>
+					<canvas id="meter1" width = "300px" height="300px"></canvas>
+				</div>
+
+				<div id="sensor_value1" align="center">
+					<h3 id="humidity_title">Humidity</h3>
+					<canvas id="humidity"  width = "400px" height="210px"></canvas>
+				</div>
+			</div>
+			<div id="colume2">
+				<div align="center">
+					<h3 id="schneider_title">Schneider 1018</h3>
+					<canvas id="meter2"  width = "300px" height="300px"></canvas>
+				</div>
+				<div id="sensor_value2" align="center">
+					<h3 id="temperature_title">Temperature</h3>
+					<canvas id="temperature"  width = "400px" height="210px"></canvas>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div id="footer-container">
+		<div id="footer">
+			Copyright © Site name, 20XX 
+		</div>
+	</div>
+</div>
+
+	</body>
+	
+</html>
