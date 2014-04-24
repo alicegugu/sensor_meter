@@ -105,29 +105,44 @@
 
 	function init() { 
 		setInterval(function(){
-			radians = 2.3*Math.sin( (new Date)*1/1000 ) - 0.15;
+			var radians1;
+			var radians2;
+			//radians = 2.3*Math.sin( (new Date)*1/1000 ) - 0.15;
 
-/*
+
 			$.ajax({
 				crossDomain:true,
-				url: 'http://164.78.251.31/v2/api/feeds/3/datastreams/27/',
+				url: 'http://164.78.251.31/v2/api/feeds/2/datastreams/19/',
 				type:'GET',
-				dataType: 'jsonp',
-				//beforeSend: function(xhr){xhr.setRequestHeader('X-Apikey', 'n86RoDq4');},
-				headers: {
+				beforeSend: function(xhr){xhr.setRequestHeader('X-Apikey', 'n86RoDq4');},
+				/*headers: {
         			"X-Apikey":"n86RoDq4",
-        			"Content-Type":"application/json"
-    			},
+        			"Content-Type":"application/json"	
+    			},*/
     			success: function(data) {
-					console.log(data);
+					radians1 = data.current_value*1000
+					console.log(radians1)
+					var meter1 = document.getElementById('meter1'); 
+					drawNeedle(radians1, meter1);
 				}
 
-			}) */
+			})
 
-			var meter1 = document.getElementById('meter1'); 
-			var meter2 = document.getElementById('meter2'); 
-			drawNeedle(radians, meter1);
-			drawNeedle(radians, meter2);
+			$.ajax({
+				crossDomain:true,
+				url: 'http://164.78.251.31/v2/api/feeds/2/datastreams/20/',
+				type:'GET',
+				beforeSend: function(xhr){xhr.setRequestHeader('X-Apikey', 'n86RoDq4');},
+    			success: function(data) {
+					radians2 = data.current_value*1000;
+					console.log(radians2)
+					var meter2 = document.getElementById('meter2'); 
+					drawNeedle(radians2, meter2);
+				}
+
+			})  	
+
+
 		}, 50)
 
 
