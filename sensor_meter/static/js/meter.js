@@ -60,9 +60,11 @@
 		drawDot(ctx, center, radius);
 		value_remainder = parseInt(value_remainder*10);
 		drawNumber(ctx, value_remainder, j+1);
+
+
 	}
 
-	function get_feed(ctx, datastreamID) {
+	function get_feed(ctx, datastreamID, meter) {
 					// Set the Xively API key  
 			xively.setKey( "I3TgQOZ0oUHtczcEwKebNDiqInJKoyNErkR1vN3esZB0nhiT" ); 
 			// Replace with your own values  
@@ -88,7 +90,12 @@
  
 		    //});  
 
-		  
+
+		    //-3.52 to 1.4 ==> 0 to 100
+		    radians = (datastream["current_value"]*(3.52+1.4)/100.0 )-3.52
+
+			drawNeedle(radians, meter);
+		  	
 		  });  
 	}
 
@@ -105,8 +112,6 @@
 
 	function init() { 
 		setInterval(function(){
-			var radians1;
-			var radians2;
 			//radians = 2.3*Math.sin( (new Date)*1/1000 ) - 0.15;
 
 
@@ -120,10 +125,7 @@
         			"Content-Type":"application/json"	
     			},*/
     			success: function(data) {
-					radians1 = data.current_value*1000
-					console.log(radians1)
-					var meter1 = document.getElementById('meter1'); 
-					drawNeedle(radians1, meter1);
+					$('#mh_blue').html(data.current_value)
 				}
 
 			})
@@ -134,10 +136,7 @@
 				type:'GET',
 				beforeSend: function(xhr){xhr.setRequestHeader('X-Apikey', 'n86RoDq4');},
     			success: function(data) {
-					radians2 = data.current_value*1000;
-					console.log(radians2)
-					var meter2 = document.getElementById('meter2'); 
-					drawNeedle(radians2, meter2);
+					$('#schneider').html(data.current_value)
 				}
 
 			})  	
@@ -148,6 +147,8 @@
 
 
 
+		var radians1;
+			var radians2;
 
 		/**************Humidity********************************/
 	    var humidity = document.getElementById('humidity');
@@ -163,7 +164,9 @@
 	        //digits_image.onload = imgLoaded;
 	        setInterval( function () {
 				datastreamID  = "Humidity";       // Datastream ID 
-				get_feed(ctx, datastreamID)
+				var meter1 = document.getElementById('meter1');
+				get_feed(ctx, datastreamID, meter1);
+
 			}, 2000);
 	         
 	    } else {
@@ -186,7 +189,9 @@
 	        //digits_image.onload = imgLoaded;
 	        setInterval( function () {
 				datastreamID  = "Temperature";       // Datastream ID 
-				get_feed(temperature_ctx, datastreamID)
+				var meter2 = document.getElementById('meter2'); 
+				get_feed(temperature_ctx, datastreamID, meter2);
+
 			}, 3000);
 	         
 	    } else {
