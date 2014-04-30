@@ -90,20 +90,32 @@ canvas {
 
 #humidity_title
 {
-	margin: 30px 30px 30px 30px
+	margin: 30px 30px 30px 30px;
 }
 
 #temperature_title
 {
-	margin: 30px 30px 30px 30px
+	margin: 30px 30px 30px 30px;
 }
 
 #mh_title
 {
-	margin: 30px 30px 30px 30px
+	margin: 30px 30px 30px 30px;
 }
 
 #schneider_title
 {
-	margin: 30px 30px 30px 30px
+	margin: 30px 30px 30px 30px;
+}
+
+#mh_blue
+{
+	font-family: 'Play', sans-serif;
+	font-size: 100px;
+}
+
+#schneider
+{
+	font-family: 'Play', sans-serif;
+	font-size: 100px;
 }
