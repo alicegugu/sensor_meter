@@ -29,7 +29,13 @@ canvas {
 	background: #ddd;
 }
 
-#header h1 { margin: 0; }
+#header h1 
+{
+	margin: 0;
+	display: table-cell; 
+	vertical-align: middle;
+	text-align: center;
+}
 
 #content-container
 {
@@ -37,6 +43,7 @@ canvas {
 	width: 100%;
 	color: #000;
 	background: #eee;
+
 }
 
 #content-container2
@@ -118,4 +125,10 @@ canvas {
 {
 	font-family: 'Play', sans-serif;
 	font-size: 100px;
+}
+
+#kwh
+{
+	font-family: 'Play', sans-serif;
+	font-size: 20px;
 }
