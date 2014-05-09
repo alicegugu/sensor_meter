@@ -188,7 +188,7 @@
 	        digits_image.src = '/static/images/digits.png';
 	        //digits_image.onload = imgLoaded;
 	        setInterval( function () {
-				datastreamID  = "Temperature";       // Datastream ID 
+				datastreamID  = "PT100";       // Datastream ID 
 				var meter2 = document.getElementById('meter2'); 
 				get_feed(temperature_ctx, datastreamID, meter2);
 
